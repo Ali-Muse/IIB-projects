@@ -1,0 +1,196 @@
+question one
+
+public class Q1 {
+    public int IdNumber;
+    public String Name;
+    private int Phone;
+
+    {
+        IdNumber = 22;
+        Name = "Ali Muse";
+        Phone = 25672485;
+
+    }
+
+    public Q1() {
+
+    }
+
+    public int getIdNumber() {
+        return IdNumber;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public int getPhone() {
+        return Phone;
+    }
+
+    public static void main(String[] args) {
+        Q1 obj1 = new Q1();
+        Q1 obj2 = new Q1();
+        Q1 obj3 = new Q1();
+
+
+        System.out.println(obj1.getIdNumber());
+        System.out.println(obj2.getName());
+        System.out.println(obj3.getPhone());
+
+    }
+}
+
+
+
+
+Question 2
+
+public class Q2 {
+     private static String Name;
+     public  int RegNumber = 213;
+
+    static {
+        Name = "Hassan Jama";
+
+    }
+
+    public  Q2( int RegNumber) {
+        this.RegNumber = RegNumber;
+
+    }
+
+    public static String getName() {
+        return Name;
+    }
+
+    public  int getRegNumber() {
+        return RegNumber;
+    }
+    public static void main(String[] args) {
+      Q2 obj = new Q2(213);
+
+        System.out.println(Q2.getName());
+        System.out.println(obj.getRegNumber());
+    }
+}
+
+
+
+Question 3
+
+public class Student {
+
+        int rNo;
+        String stName;
+        int stAge;
+
+        Address stAddr;
+
+        Student(int roll, String name, int age, Address address) {
+            this.rNo = roll;
+            this.stName = name;
+            this.stAge = age;
+            this.stAddr = address;
+        }
+        public void DisplayStudentInfo(){
+            System.out.println("Roll no:"+ rNo);
+            System.out.println("Name:"+stName);
+            System.out.println("Age:"+stAge);
+
+            stAddr.DisplayAddressInfo();
+        }
+    }
+
+
+    class Address {
+        int streetNum;
+        String city;
+        String state;
+        String country;
+
+        Address(int street, String city, String state, String country){
+            this.streetNum = street;
+            this.city = city;
+            this.state = state;
+            this.country = country;
+        }
+        public void DisplayAddressInfo(){
+            System.out.println("Street number:"+streetNum);
+            System.out.println("City:"+city);
+            System.out.println("State:"+state);
+            System.out.println("Country:"+country);
+        }
+    }
+
+    class Tester{
+        public static void main(String[]args) {
+
+            Address add = new Address(12, "kampala", "makindy division", "Uganda");
+            Student st = new Student(1789, "Hassan Ali", 25, add);
+
+            st.DisplayStudentInfo();
+
+        }
+    }
+
+
+Question 4
+
+
+package com.Qn4;
+
+public class Teacher {
+    public String name;
+    protected int ID;
+    private int age;
+    String courseName;
+
+    public Teacher(String name, int ID, int age, String courseName) {
+        this.name = name;
+        this.ID = ID;
+        this.age = age;
+        this.courseName = courseName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void print(){
+
+        System.out.println("Name:"+name);
+        System.out.println("ID:"+ ID);
+        System.out.println("Age:"+age);
+        System.out.println("CourseName:"+courseName);
+
+    }
+}
+
+
+public class Student extends Teacher{
+
+    private int studentId;
+
+    public Student(String name, int ID, int age, String courseName, int studentId){
+        super(name, ID, age, courseName);
+        this.studentId = studentId;
+    }
+    public void print(){
+        super.print();
+        System.out.println("StudentID:"+studentId);
+    }
+}
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Student stud = new Student("Mahad", 2345, 27, "System Analysis", 55);
+        stud.print();
+    }
+}
